@@ -33,6 +33,6 @@ def who_wins(c,u):
 
 try:
     n = int(input('How many chances do you want? '))
+    rps(n)
 except:
     print('Invalid Number')
-rps(n)
