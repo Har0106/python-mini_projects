@@ -1,13 +1,12 @@
 import random
 
 def rps(n):
-
     u_points = 0
     c_points = 0
 
     for i in range(n):
         c = random.choice(['R', 'P', 'S'])
-        u = input('R or P or S? ')
+        u = input('R or P or S? ').capitalize()
 
         if u != 'R' and u != 'P' and u != 'S':
             print('Invalid Selection')
