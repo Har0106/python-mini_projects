@@ -1,8 +1,7 @@
 import random
 
 lives = 6
-
-words = ['algorithm', 'argument', 'program', 'conditional', 'declaration', 'framework', 'iteration', 'autonomous', 'statements', 'compiling', 'latency', 'asynchronous', 'backpropagation', 'centroid', 'clustering', 'denoising', 'generalization', 'lambda', 'authentication', 'decryption', 'encryption', 'scareware', 'bootstrap', 'debugging', 'Deployment']
+words = ['algorithm', 'argument', 'program', 'conditional', 'declaration', 'framework', 'iteration', 'autonomous', 'statements', 'compiling', 'latency', 'asynchronous', 'backpropagation', 'centroid', 'clustering', 'denoising', 'generalization', 'lambda', 'authentication', 'decryption', 'encryption', 'scareware', 'bootstrap', 'debugging', 'deployment', 'microsoft', 'oracle', 'adobe', 'console']
 word = random.choice(words)
 want = set(word)
 used = set()
