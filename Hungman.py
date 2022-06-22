@@ -13,7 +13,7 @@ while lives != 0 and len(want) != 0:
         used.add(l)
     else:
         lives -= 1
-    print(''.join([i if i in used else '_' for i in word]))
+    print(''.join([i if i in used else '_' for i in word]), f"\nRemaining Lives: {lives}")
 
 if len(want) == 0:
     print('You Won!')
