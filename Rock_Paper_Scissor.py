@@ -15,7 +15,7 @@ def rps(n):
             u_points += 1
         else:
             c_points += 1
-        print(f'Points: {u_points}')
+        print(f'Points: {u_points}', f'\nRemainig Chances: {n-i-1}')
 
     if u_points > c_points:
         print('You Won!')
