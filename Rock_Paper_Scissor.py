@@ -31,8 +31,14 @@ def who_wins(c,u):
         return 'u'
     return 'c'
 
-try:
-    n = int(input('How many chances do you want? '))
+n = 0
+while True:
+    n = input('How many chances do you want? ')
+    if n.isdigit() and n != '0':
+        n = int(n)
+        break
+    else:
+        print('Invalid number. Try Again.')
+
+if n != 0:
     rps(n)
-except:
-    print('Invalid Number')
