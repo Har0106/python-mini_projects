@@ -1,4 +1,8 @@
 import random
+import string
+
+print('Welcome to hungman!')
+print('You have to enter an alphabet number.')
 
 def hungman():
     lives = 6
@@ -9,6 +13,11 @@ def hungman():
 
     while lives != 0 and len(want) != 0:
         l = input('Enter Alphabet Letter: ').lower()
+
+        if l not in string.ascii_lowercase:
+            print('Invalid Letter, Try Again.')
+            continue
+
         if l in want:
             want.remove(l)
             used.add(l)
