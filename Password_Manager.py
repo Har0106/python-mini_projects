@@ -24,9 +24,12 @@ def view(account):
             if i.startswith(account):
                 account, password = i.rstrip().split(': ')
                 print('Password:', fer.decrypt(password.encode()).decode())
+                break
+        else:
+            print('There is no such account')
 
 while True:
-    activity = input('What do you want to do? ').lower()
+    activity = input('What do you want to do? ').strip().lower()
 
     if activity not in ['view', 'add', 'quit']:
         print('Invalid input. Try again.')
@@ -35,9 +38,9 @@ while True:
     if activity == 'quit':
         break
     elif activity == 'view':
-        account = input('Account: ').capitalize()
+        account = input('Account: ').strip().capitalize()
         view(account)
     else:
-        account = input('Account: ').capitalize()
+        account = input('Account: ').strip().capitalize()
         password = input('Password: ')
         add(account, password)
