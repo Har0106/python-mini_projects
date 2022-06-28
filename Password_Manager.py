@@ -44,3 +44,5 @@ while True:
         account = input('Account: ').strip().capitalize()
         password = input('Password: ')
         add(account, password)
+
+print('See you again.')
