@@ -4,7 +4,7 @@ class ExitHouse():
     def __init__(self):
         self.lives = 0
         self.weapon = False
-        self.qanda = [['What country has the highest life expectancy? ', 'Hong Kong'], ['What is the most common surname in the United States? ', 'Smith'], ['Who has won the most total Academy Awards? ', 'Walt Disney'], ['How many elements are in the periodic table? ', '118'], ['Which planet in the Milky Way is the hottest? ', 'Venus']] 
+        self.qanda = [['What disease commonly spread on pirate ships? ', 'Scurvy'], ['What is the most common surname in the United States? ', 'Smith'], ['Who has won the most total Academy Awards? ', 'Walt Disney'], ['How many elements are in the periodic table? ', '118'], ['Which planet in the Milky Way is the hottest? ', 'Venus']] 
 
     def eigth_room(self):
         print('Welome to Exit The Dangerous House!\nNow you are in room 8. Where do you want to go next?')
