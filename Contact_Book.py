@@ -1,26 +1,34 @@
+import sqlite3
+
 print('Welcome to contact book!')
 print('\nEnter view to view existing contact.\nEnter add to add a new contact.\nEnter quit to exit contact book.\n')
 
 def add():
+    connect = sqlite3.connect('contact_book.sqlite')
+    cursor = connect.cursor()
+    # cursor.execute('CREATE TABLE Contacts (name TEXT, phone_no TEXT, address TEXT, email TEXT)')
+
     name = input('Name: ').title()
-    phone = input('Phone Number: ')
+    phone_no = input('Phone Number: ')
     address = input('Address: ')
     email = input('Email: ')
 
-    with open('contacts.txt', 'w') as file:
-        file.write(f'{name} : {phone} : {address} : {email}')
+    cursor.execute('INSERT INTO Contacts (name, phone_no, address, email) VALUES (?, ?, ?, ?)',(name, phone_no, address, email))
+    connect.commit()
+    connect.close()
 
 def view():
     name = input('Name: ').title()
     
-    with open('contacts.txt', 'r') as file:
-        for i in file.readlines():
-            if i.startswith(name):
-                name, phone, address, email = i.split(' : ')
-                print(f'Phone Number: {phone}\nAddress: {address}\nEmail: {email}')
-                break
-        else:
-            print('Contact not found.')
+    connect = sqlite3.connect('contact_book.sqlite')
+    cursor = connect.cursor()
+
+    cursor.execute('SELECT phone_no, address, email FROM Contacts WHERE name = ?', (name,))
+    row = cursor.fetchone()
+    print(f'Phone Number: {row[0]}\nAddress: {row[1]}\nEmail: {row[2]}')
+    
+    connect.commit()
+    connect.close()
 
 while True:
     m = input('What do you want to do? ')
