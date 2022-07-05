@@ -1,7 +1,5 @@
 import sqlite3
 
-from requests import delete
-
 print('Welcome to contact book!')
 print('\nEnter view to view existing contact.\nEnter add to add a new contact.\nEnter delete to delete a contact.\nEnter quit to exit contact book.\n')
 
